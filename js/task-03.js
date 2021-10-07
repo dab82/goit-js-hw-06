@@ -13,14 +13,16 @@ const images = [
 	},
 ];
 const ulEl = document.querySelector(".gallery");
-const createImagElement = (array) => {
-	return images.map((image) => {
-		const imageEl = document.createElement("img");
-		imageEl.src = images.url;
-		imageEl.alt = images.alt;
-		imageEl.width = 480;
-		return imageEl;
-	});
-};
-createImagElement(images);
-ulEl.append(...createImagElement(images));
+// const liEl = document.createElement("li");
+
+const elements = images.map((option) => {
+	const imageEl = document.createElement("img");
+	imageEl.classList.add("img-position");
+	imageEl.src = option.url;
+	imageEl.alt = option.alt;
+	// imageEl.width = 320;
+
+	return imageEl;
+});
+// liEl.append(...elements);
+ulEl.append(...elements);
