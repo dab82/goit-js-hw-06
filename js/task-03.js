@@ -13,16 +13,12 @@ const images = [
 	},
 ];
 const ulEl = document.querySelector(".gallery");
-// const liEl = document.createElement("li");
 
-const elements = images.map((option) => {
-	const imageEl = document.createElement("img");
-	imageEl.classList.add("img-position");
-	imageEl.src = option.url;
-	imageEl.alt = option.alt;
-	// imageEl.width = 320;
+const createLiEl = images
+	.map(
+		({ url, alt }) =>
+			`<li class ="gallery__li"><img class="gallery_img" src="${url}" alt="${alt}"></li>`
+	)
+	.join("");
 
-	return imageEl;
-});
-// liEl.append(...elements);
-ulEl.append(...elements);
+ulEl.insertAdjacentHTML("beforeend", createLiEl);
