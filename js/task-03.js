@@ -17,7 +17,7 @@ const ulEl = document.querySelector(".gallery");
 const createLiEl = images
 	.map(
 		({ url, alt }) =>
-			`<li class ="gallery__li"><img class="gallery_img" src="${url}" alt="${alt}"></li>`
+			`<li class ="gallery__li"><img class="gallery__img" src="${url}" alt="${alt}"></li>`
 	)
 	.join("");
 
